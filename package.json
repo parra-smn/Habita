@@ -1,0 +1,29 @@
+{
+  "name": "habita-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Habita: app de vivienda para Colombia (iOS y Android con Capacitor)",
+  "scripts": {
+    "build": "node scripts/build-web.mjs",
+    "assets": "npx capacitor-assets generate --iconBackgroundColor '#0B6B66' --splashBackgroundColor '#0B6B66'",
+    "add:ios": "npx cap add ios",
+    "add:android": "npx cap add android",
+    "sync": "npm run build && npx cap sync && bash scripts/patch-native.sh",
+    "open:ios": "npx cap open ios",
+    "open:android": "npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/app-launcher": "^8.0.1",
+    "@capacitor/camera": "^8.2.6",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/geolocation": "^8.2.4",
+    "@capacitor/ios": "^8.5.3",
+    "@capacitor/splash-screen": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.5.3"
+  }
+}
